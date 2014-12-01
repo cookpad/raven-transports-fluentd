@@ -1,0 +1,5 @@
+rails: bundle exec rails server
+fluent: bundle exec fluentd -c config/fluentd-development.conf
+redis: redis-server --logfile log/redis.log --save 10 1 --dbfilename tmp/dump.rdb
+sentry: sentry --config=sentry/sentry.conf.py start
+sentry-worker: sentry --config=sentry/sentry.conf.py celery worker -B

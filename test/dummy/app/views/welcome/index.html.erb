@@ -1,0 +1,5 @@
+<h1>Welcome#index</h1>
+<%= form_tag(exception_path, method: :get, remote: true) do %>
+  <%= text_field_tag :message %>
+  <%= submit_tag 'Raise' %>
+<% end %>
