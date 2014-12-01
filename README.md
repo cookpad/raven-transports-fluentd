@@ -1,4 +1,5 @@
 # Raven::Transports::Fluentd
+[![Gem Version](https://badge.fury.io/rb/raven-transports-fluentd.svg)](http://badge.fury.io/rb/raven-transports-fluentd)
 
 Send error logs to [sentry](https://github.com/getsentry/sentry) via [fluentd](https://github.com/fluent/fluentd) .
 
