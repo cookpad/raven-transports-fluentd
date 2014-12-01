@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.version       = '0.0.1'
   spec.authors       = ["Naoto Takai", "Kohei Suzuki"]
   spec.email         = ["takai@cookpad.com", "kohei-suzuki@cookpad.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Send error logs to sentry via fluentd.}
+  spec.description   = %q{Send error logs to sentry via fluentd.}
+  spec.homepage      = "https://github.com/cookpad/raven-transports-fluentd"
   spec.license       = 'Apache License, Version 2.0'
 
   spec.files         = `git ls-files -z`.split("\x0")

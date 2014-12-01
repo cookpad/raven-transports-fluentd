@@ -1,6 +1,6 @@
 # Raven::Transports::Fluentd
 
-TODO: Write a gem description
+Send error logs to [sentry](https://github.com/getsentry/sentry) via [fluentd](https://github.com/fluent/fluentd) .
 
 ## Installation
 
@@ -20,7 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+config/initializers/raven.rb
+
+```ruby
+require 'raven'
+require 'raven/transports/fluentd'
+
+Raven.configure do |config|
+  config.dsn = "fluentd://#{ENV['SENTRY_PUBLIC_KEY']}:#{ENV['SENTRY_SECRET_KEY']}@localhost:24224/2"
+end
+```
 
 ## Contributing
 
