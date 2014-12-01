@@ -1,6 +1,6 @@
 module Raven
   module Transports
-    module Ext
+    module FluentdExt
       def transport
         @transport ||=
           case self.configuration.scheme
@@ -20,4 +20,4 @@ end
 
 require 'raven/client'
 
-Raven::Client.send(:prepend, Raven::Transports::Ext)
+Raven::Client.send(:prepend, Raven::Transports::FluentdExt)

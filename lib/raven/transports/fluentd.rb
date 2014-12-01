@@ -34,4 +34,4 @@ module Raven
 end
 
 # Extends Raven::Client to use Raven::Transports::Fluentd
-require 'raven/transports/ext'
+require 'raven/transports/fluentd_ext'
