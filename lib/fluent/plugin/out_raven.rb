@@ -1,6 +1,4 @@
 require 'raven'
-require 'hashie'
-require 'uri'
 
 module Fluent
   class RavenOutput < BufferedOutput
@@ -14,18 +12,14 @@ module Fluent
 
     def configure(conf)
       super
-      uri =  URI.parse(conf['server'])
-      project_id = uri.path.slice(/\d+/)
 
-      @base_configuration = Hashie::Mash.new(
-        server:           conf['server'],
-        public_key:       'not_used',
-        secret_key:       'not_used',
-        ssl:              uri.scheme == 'https' ? true : false,
-        ssl_verification: conf['ssl_verification'],
-        timeout:          conf['timeout'],
-        open_timeout:     conf['open_timeout'],
-      )
+      @base_configuration = Raven::Configuration.new
+      @base_configuration.server = conf['server']
+      @base_configuration.public_key = 'not_used'
+      @base_configuration.secret_key = 'not_used'
+      @base_configuration.ssl_verification = conf['ssl_verification']
+      @base_configuration.timeout = conf['timeout']
+      @base_configuration.open_timeout = conf['open_timeout']
 
       Raven.configure do |config|
         config.logger = Logger.new(conf['raven_log_path'])
@@ -57,9 +51,9 @@ module Fluent
     private
 
     def send_to_sentry(auth_header, data, project_id, options)
-      transport = ::Raven::Transports::HTTP.new(@base_configuration.merge(
-        project_id: project_id,
-      ))
+      config = @base_configuration.dup
+      config.project_id = project_id
+      transport = ::Raven::Transports::HTTP.new(config)
       transport.send(auth_header, data, options)
     end
 
