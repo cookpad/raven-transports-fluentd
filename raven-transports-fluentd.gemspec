@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "fluent-logger"
   spec.add_dependency "hashie"
-  spec.add_dependency "sentry-raven", "~> 0.10.1"
+  spec.add_dependency "sentry-raven", ">= 0.10.1"
 end
