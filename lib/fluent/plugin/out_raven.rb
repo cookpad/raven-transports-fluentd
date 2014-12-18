@@ -9,6 +9,7 @@ module Fluent
     config_param :timeout, :integer, default: 1
     config_param :open_timeout, :integer, default: 1
     config_param :raven_log_path, :string
+    config_param :raven_log_level, :string, default: 'info'
 
     def configure(conf)
       super
@@ -22,7 +23,7 @@ module Fluent
       @base_configuration.open_timeout = conf['open_timeout']
 
       Raven.configure do |config|
-        config.logger = Logger.new(conf['raven_log_path'])
+        config.logger = Logger.new(conf['raven_log_path'], log_level(conf['raven_log_level']))
       end
     end
 
@@ -57,5 +58,17 @@ module Fluent
       transport.send(auth_header, data, options)
     end
 
+    LOG_LEVELS = {
+      'debug' => Logger::DEBUG,
+      'info' => Logger::INFO,
+      'warn' => Logger::WARN,
+      'error' => Logger::ERROR,
+      'fatal' => Logger::FATAL,
+      'unknown' => Logger::UNKNOWN,
+    }.freeze
+
+    def log_level(str)
+      LOG_LEVELS.fetch(str, 'info')
+    end
   end
 end
