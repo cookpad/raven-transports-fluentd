@@ -21,5 +21,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   spec.add_dependency "fluent-logger"
-  spec.add_dependency "sentry-raven", ">= 0.10.1"
+  spec.add_dependency "sentry-raven", ">= 0.13.2"
 end

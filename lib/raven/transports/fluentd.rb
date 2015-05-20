@@ -9,7 +9,7 @@ module Raven
   module Transports
     class Fluentd < Transport
 
-      def send(auth_header, data, options = {})
+      def send_event(auth_header, data, options = {})
         conn.post('error', auth_header: auth_header, data: data, options: options, project_id: configuration.project_id)
       end
 
