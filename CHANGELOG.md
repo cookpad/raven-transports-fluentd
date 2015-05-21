@@ -1,3 +1,7 @@
+## 0.1.3 (2015-05-21)
+- Fix send event method name (#1)
+    - For https://github.com/getsentry/raven-ruby/pull/326
+
 ## 0.1.2 (2014-12-08)
 - Fix fluentd plugin issue with sentry-raven >= 0.11.2
 
