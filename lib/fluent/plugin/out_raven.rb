@@ -55,7 +55,7 @@ module Fluent
       config = @base_configuration.dup
       config.project_id = project_id
       transport = ::Raven::Transports::HTTP.new(config)
-      transport.send(auth_header, data, options)
+      transport.send_event(auth_header, data, options)
     end
 
     LOG_LEVELS = {
