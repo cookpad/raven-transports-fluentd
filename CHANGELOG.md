@@ -1,3 +1,6 @@
+## 0.1.4 (2016-02-29)
+- Fix send event method name
+
 ## 0.1.3 (2015-05-21)
 - Fix send event method name (#1)
     - For https://github.com/getsentry/raven-ruby/pull/326
