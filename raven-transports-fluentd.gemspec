@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "raven-transports-fluentd"
-  spec.version       = '0.1.4'
+  spec.version       = '0.2.0'
   spec.authors       = ["Naoto Takai", "Kohei Suzuki"]
   spec.email         = ["takai@cookpad.com", "kohei-suzuki@cookpad.com"]
   spec.summary       = %q{Send error logs to sentry via fluentd.}

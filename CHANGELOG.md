@@ -1,3 +1,7 @@
+## 0.2.0 (2017-01-17)
+- Support sentry-raven >= 2.2.0
+  - Drop support sentry-raven < 2.2.0
+
 ## 0.1.4 (2016-02-29)
 - Fix send event method name
 
