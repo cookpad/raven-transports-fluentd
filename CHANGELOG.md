@@ -1,3 +1,7 @@
+## 0.2.1 (2017-10-17)
+- Support sentry-raven >= 2.7.0
+  - Drop support sentry-raven < 2.7.0
+
 ## 0.2.0 (2017-01-17)
 - Support sentry-raven >= 2.2.0
   - Drop support sentry-raven < 2.2.0
