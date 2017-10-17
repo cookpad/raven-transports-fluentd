@@ -1,7 +1,7 @@
 require 'fluent-logger'
 
 require 'raven/transports'
-require 'raven/error'
+require 'raven/base'
 
 require 'uri'
 
