@@ -1,3 +1,6 @@
+## 0.2.2 (2019-03-20)
+- Update Fluentd plugin to support multi process workers
+
 ## 0.2.1 (2017-10-17)
 - Support sentry-raven >= 2.7.0
   - Drop support sentry-raven < 2.7.0
