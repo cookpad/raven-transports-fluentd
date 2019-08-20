@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    raven-transports-fluentd (0.2.1)
+    raven-transports-fluentd (0.2.2)
       fluent-logger
       sentry-raven (>= 2.7.0)
 
@@ -62,10 +62,10 @@ GEM
       railties (>= 3.2, < 6.0)
     erubis (2.7.0)
     execjs (2.7.0)
-    faraday (0.15.2)
+    faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
-    fluent-logger (0.7.2)
+    fluent-logger (0.8.1)
       msgpack (>= 1.0.0, < 2)
     fluentd (1.2.5)
       cool.io (>= 1.4.5, < 2.0.0)
@@ -94,12 +94,12 @@ GEM
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
     mini_mime (1.0.1)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.4)
-    multipart-post (2.0.0)
-    nokogiri (1.8.5)
-      mini_portile2 (~> 2.3.0)
+    multipart-post (2.1.1)
+    nokogiri (1.10.4)
+      mini_portile2 (~> 2.4.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -145,7 +145,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sentry-raven (2.7.4)
+    sentry-raven (2.11.0)
       faraday (>= 0.7.6, < 1.0)
     serverengine (2.0.7)
       sigdump (~> 0.2.2)
