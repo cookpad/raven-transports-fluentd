@@ -22,6 +22,10 @@ module Fluent
       @base_configuration.timeout = conf['timeout']
       @base_configuration.open_timeout = conf['open_timeout']
 
+      if conf['raven_log_path'].nil?
+        log.warn("`raven_log_level` is meaningless when `raven_log_path` isn't set")
+      end
+
       Raven.configure do |config|
         config.logger = if conf['raven_log_path'].nil?
                           log
