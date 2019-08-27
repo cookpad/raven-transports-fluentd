@@ -1,3 +1,6 @@
+## 0.3.0 (2019-08-27)
+- Store log of Raven via Fluent::Log
+
 ## 0.2.2 (2019-03-20)
 - Update Fluentd plugin to support multi process workers
 
