@@ -8,7 +8,7 @@ module Fluent
     config_param :ssl_verification, :bool, default: false
     config_param :timeout, :integer, default: 1
     config_param :open_timeout, :integer, default: 1
-    config_param :raven_log_path, :string
+    config_param :raven_log_path, :string, default: nil
     config_param :raven_log_level, :string, default: 'info'
 
     def configure(conf)
@@ -22,8 +22,16 @@ module Fluent
       @base_configuration.timeout = conf['timeout']
       @base_configuration.open_timeout = conf['open_timeout']
 
+      if conf['raven_log_path'].nil?
+        log.warn("`raven_log_level` is meaningless when `raven_log_path` isn't set")
+      end
+
       Raven.configure do |config|
-        config.logger = Logger.new(conf['raven_log_path'], log_level(conf['raven_log_level']))
+        config.logger = if conf['raven_log_path'].nil?
+                          log
+                        else
+                          Logger.new(conf['raven_log_path'], log_level(conf['raven_log_level']))
+                        end
       end
     end
 
