@@ -3,6 +3,10 @@
 
 Send error logs to [sentry](https://github.com/getsentry/sentry) via [fluentd](https://github.com/fluent/fluentd) .
 
+## Sunset
+This gem is no longer maintained. Use official SDK directly.
+https://docs.sentry.io/clients/ruby/
+
 ## Installation
 
 Add this line to your application's Gemfile:
